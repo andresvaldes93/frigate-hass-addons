@@ -1,8 +1,8 @@
-name: Frigate (For old x86_64 CPU without AVX)
+name: Frigate Old CPU Custom
+slug: frigate-oldcpu-custom
 version: 0.14.1
 panel_icon: "mdi:cctv"
 panel_title: Frigate
-slug: frigate-oldcpu
 description: NVR with realtime local object detection for IP cameras
 url: "https://github.com/blakeblackshear/frigate"
 startup: application
