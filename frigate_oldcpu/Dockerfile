@@ -3,8 +3,12 @@ FROM debian:11 as base
 ENV DEBIAN_FRONTEND=noninteractive
 # tflite dependencies, see https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/pip_package
 # libedgetpu dependencies, see https://github.com/google-coral/libedgetpu/blob/master/docker/Dockerfile
-RUN apt-get -qq update \
-    && apt-get -qq install -y \
+RUN rm -f /var/cache/apt/pkgcache.bin \
+    /var/cache/apt/srcpkgcache.bin \
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get clean \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
     python3 \
     python3-dev \
     python3-numpy \
